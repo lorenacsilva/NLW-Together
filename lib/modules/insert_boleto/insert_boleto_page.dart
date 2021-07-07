@@ -44,6 +44,7 @@ class _InsertBoletoPageState extends State<InsertBoletoPage> {
         ),
       ),
       body: SingleChildScrollView(
+        // resolve problema de payflow
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Column(
@@ -69,7 +70,9 @@ class _InsertBoletoPageState extends State<InsertBoletoPage> {
                         label: "Nome do boleto",
                         icon: Icons.description_outlined,
                         validator: controller.validateName,
-                        onChanged: (value) {},
+                        onChanged: (value) {
+                          controller.onChange(name: value);
+                        },
                         initialValue: true,
                       ),
                       InputTextWidget(
